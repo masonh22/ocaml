@@ -609,6 +609,9 @@ CAMLexport value caml_startup_code_exn(
   char_os * cds_file;
   char_os * exe_name;
 
+  if (pooling)
+    caml_stat_create_pool();
+
   /* Initialize the domain */
   caml_init_domain();
   /* Determine options */

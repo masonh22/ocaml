@@ -109,6 +109,9 @@ value caml_startup_common(char_os **argv, int pooling)
   value res;
   char tos;
 
+  if (pooling)
+    caml_stat_create_pool();
+
   /* Initialize the domain */
   caml_init_domain();
   /* Determine options */
